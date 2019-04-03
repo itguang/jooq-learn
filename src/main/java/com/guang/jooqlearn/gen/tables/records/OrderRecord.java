@@ -9,6 +9,7 @@ import com.guang.jooqlearn.gen.tables.Order;
 import java.sql.Timestamp;
 
 import javax.annotation.Generated;
+import javax.validation.constraints.NotNull;
 
 import org.jooq.Field;
 import org.jooq.Record1;
@@ -30,7 +31,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class OrderRecord extends UpdatableRecordImpl<OrderRecord> implements Record5<Integer, Integer, Long, Byte, Timestamp> {
 
-    private static final long serialVersionUID = -1111314586;
+    private static final long serialVersionUID = 1502956501;
 
     /**
      * Setter for <code>study.order.order_id</code>. 订单编号
@@ -42,6 +43,7 @@ public class OrderRecord extends UpdatableRecordImpl<OrderRecord> implements Rec
     /**
      * Getter for <code>study.order.order_id</code>. 订单编号
      */
+    @NotNull
     public Integer getOrderId() {
         return (Integer) get(0);
     }
@@ -70,6 +72,7 @@ public class OrderRecord extends UpdatableRecordImpl<OrderRecord> implements Rec
     /**
      * Getter for <code>study.order.amout</code>. 订单金额(单位为分)
      */
+    @NotNull
     public Long getAmout() {
         return (Long) get(2);
     }

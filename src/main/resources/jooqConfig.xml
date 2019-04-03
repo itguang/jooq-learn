@@ -16,12 +16,19 @@
             <!-- 数据库类型 -->
             <name>org.jooq.meta.mysql.MySQLDatabase</name>
             <!-- 数据库名 -->
-            <inputSchema>jooq</inputSchema>
+            <inputSchema>study</inputSchema>
             <!-- 生成包含，*表示包含所有内容 -->
             <includes>.*</includes>
             <!-- 剔除，此处未剔除 -->
             <excludes></excludes>
         </database>
+        <generate>
+            <pojos>true</pojos>
+            <pojosEqualsAndHashCode>true</pojosEqualsAndHashCode>
+            <pojosToString>true</pojosToString>
+            <validationAnnotations>true</validationAnnotations>
+            <springAnnotations>true</springAnnotations>
+        </generate>
         <target>
             <!-- 生成的代码所在的包结构 -->
             <packageName>com.guang.jooqlearn.gen</packageName>

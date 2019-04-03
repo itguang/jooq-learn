@@ -7,6 +7,8 @@ package com.guang.jooqlearn.gen.tables.records;
 import com.guang.jooqlearn.gen.tables.BookToBookStore;
 
 import javax.annotation.Generated;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.jooq.Field;
 import org.jooq.Record2;
@@ -28,7 +30,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class BookToBookStoreRecord extends UpdatableRecordImpl<BookToBookStoreRecord> implements Record3<String, Integer, Integer> {
 
-    private static final long serialVersionUID = -1154417460;
+    private static final long serialVersionUID = 251609380;
 
     /**
      * Setter for <code>study.book_to_book_store.book_store_name</code>.
@@ -40,6 +42,8 @@ public class BookToBookStoreRecord extends UpdatableRecordImpl<BookToBookStoreRe
     /**
      * Getter for <code>study.book_to_book_store.book_store_name</code>.
      */
+    @NotNull
+    @Size(max = 400)
     public String getBookStoreName() {
         return (String) get(0);
     }
@@ -54,6 +58,7 @@ public class BookToBookStoreRecord extends UpdatableRecordImpl<BookToBookStoreRe
     /**
      * Getter for <code>study.book_to_book_store.book_id</code>.
      */
+    @NotNull
     public Integer getBookId() {
         return (Integer) get(1);
     }

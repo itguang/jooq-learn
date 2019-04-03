@@ -9,6 +9,8 @@ import com.guang.jooqlearn.gen.tables.Author;
 import java.sql.Date;
 
 import javax.annotation.Generated;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.jooq.Field;
 import org.jooq.Record1;
@@ -30,7 +32,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class AuthorRecord extends UpdatableRecordImpl<AuthorRecord> implements Record6<Integer, String, String, Date, Integer, String> {
 
-    private static final long serialVersionUID = -345588663;
+    private static final long serialVersionUID = -2081268312;
 
     /**
      * Setter for <code>study.author.id</code>.
@@ -42,6 +44,7 @@ public class AuthorRecord extends UpdatableRecordImpl<AuthorRecord> implements R
     /**
      * Getter for <code>study.author.id</code>.
      */
+    @NotNull
     public Integer getId() {
         return (Integer) get(0);
     }
@@ -56,6 +59,7 @@ public class AuthorRecord extends UpdatableRecordImpl<AuthorRecord> implements R
     /**
      * Getter for <code>study.author.first_name</code>.
      */
+    @Size(max = 50)
     public String getFirstName() {
         return (String) get(1);
     }
@@ -70,6 +74,8 @@ public class AuthorRecord extends UpdatableRecordImpl<AuthorRecord> implements R
     /**
      * Getter for <code>study.author.last_name</code>.
      */
+    @NotNull
+    @Size(max = 50)
     public String getLastName() {
         return (String) get(2);
     }
@@ -112,6 +118,7 @@ public class AuthorRecord extends UpdatableRecordImpl<AuthorRecord> implements R
     /**
      * Getter for <code>study.author.address</code>.
      */
+    @Size(max = 50)
     public String getAddress() {
         return (String) get(5);
     }

@@ -9,6 +9,8 @@ import com.guang.jooqlearn.gen.tables.User;
 import java.sql.Timestamp;
 
 import javax.annotation.Generated;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.jooq.Field;
 import org.jooq.Record1;
@@ -30,7 +32,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class UserRecord extends UpdatableRecordImpl<UserRecord> implements Record7<Integer, String, Byte, Byte, String, String, Timestamp> {
 
-    private static final long serialVersionUID = 2066222284;
+    private static final long serialVersionUID = 79682775;
 
     /**
      * Setter for <code>study.user.uid</code>. 用户id
@@ -56,6 +58,7 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> implements Recor
     /**
      * Getter for <code>study.user.name</code>. 姓名
      */
+    @Size(max = 10)
     public String getName() {
         return (String) get(1);
     }
@@ -98,6 +101,7 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> implements Recor
     /**
      * Getter for <code>study.user.mobile</code>. 手机号码
      */
+    @Size(max = 11)
     public String getMobile() {
         return (String) get(4);
     }
@@ -112,6 +116,8 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> implements Recor
     /**
      * Getter for <code>study.user.password</code>. 密码
      */
+    @NotNull
+    @Size(max = 64)
     public String getPassword() {
         return (String) get(5);
     }
@@ -126,6 +132,7 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> implements Recor
     /**
      * Getter for <code>study.user.register_time</code>. 注册时间
      */
+    @NotNull
     public Timestamp getRegisterTime() {
         return (Timestamp) get(6);
     }

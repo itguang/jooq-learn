@@ -9,6 +9,8 @@ import com.guang.jooqlearn.gen.tables.Book;
 import java.sql.Timestamp;
 
 import javax.annotation.Generated;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.jooq.Field;
 import org.jooq.Record1;
@@ -30,7 +32,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class BookRecord extends UpdatableRecordImpl<BookRecord> implements Record11<Integer, Integer, Integer, Integer, String, Integer, Integer, String, byte[], Integer, Timestamp> {
 
-    private static final long serialVersionUID = 1054750176;
+    private static final long serialVersionUID = 1876519526;
 
     /**
      * Setter for <code>study.book.id</code>.
@@ -42,6 +44,7 @@ public class BookRecord extends UpdatableRecordImpl<BookRecord> implements Recor
     /**
      * Getter for <code>study.book.id</code>.
      */
+    @NotNull
     public Integer getId() {
         return (Integer) get(0);
     }
@@ -56,6 +59,7 @@ public class BookRecord extends UpdatableRecordImpl<BookRecord> implements Recor
     /**
      * Getter for <code>study.book.author_id</code>.
      */
+    @NotNull
     public Integer getAuthorId() {
         return (Integer) get(1);
     }
@@ -98,6 +102,8 @@ public class BookRecord extends UpdatableRecordImpl<BookRecord> implements Recor
     /**
      * Getter for <code>study.book.title</code>.
      */
+    @NotNull
+    @Size(max = 400)
     public String getTitle() {
         return (String) get(4);
     }
@@ -140,6 +146,7 @@ public class BookRecord extends UpdatableRecordImpl<BookRecord> implements Recor
     /**
      * Getter for <code>study.book.content_text</code>.
      */
+    @Size(max = 2000)
     public String getContentText() {
         return (String) get(7);
     }
@@ -154,6 +161,7 @@ public class BookRecord extends UpdatableRecordImpl<BookRecord> implements Recor
     /**
      * Getter for <code>study.book.content_pdf</code>.
      */
+    @Size(max = 65535)
     public byte[] getContentPdf() {
         return (byte[]) get(8);
     }
