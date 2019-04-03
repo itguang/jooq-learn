@@ -4,6 +4,10 @@
 package com.guang.jooqlearn.gen;
 
 
+import com.guang.jooqlearn.gen.tables.Author;
+import com.guang.jooqlearn.gen.tables.Book;
+import com.guang.jooqlearn.gen.tables.BookStore;
+import com.guang.jooqlearn.gen.tables.BookToBookStore;
 import com.guang.jooqlearn.gen.tables.Order;
 import com.guang.jooqlearn.gen.tables.User;
 
@@ -31,6 +35,10 @@ public class Indexes {
     // INDEX definitions
     // -------------------------------------------------------------------------
 
+    public static final Index AUTHOR_PRIMARY = Indexes0.AUTHOR_PRIMARY;
+    public static final Index BOOK_PRIMARY = Indexes0.BOOK_PRIMARY;
+    public static final Index BOOK_STORE_PRIMARY = Indexes0.BOOK_STORE_PRIMARY;
+    public static final Index BOOK_TO_BOOK_STORE_PRIMARY = Indexes0.BOOK_TO_BOOK_STORE_PRIMARY;
     public static final Index ORDER_PRIMARY = Indexes0.ORDER_PRIMARY;
     public static final Index USER_INDEX_MOBILE = Indexes0.USER_INDEX_MOBILE;
     public static final Index USER_PRIMARY = Indexes0.USER_PRIMARY;
@@ -40,6 +48,10 @@ public class Indexes {
     // -------------------------------------------------------------------------
 
     private static class Indexes0 {
+        public static Index AUTHOR_PRIMARY = Internal.createIndex("PRIMARY", Author.AUTHOR, new OrderField[] { Author.AUTHOR.ID }, true);
+        public static Index BOOK_PRIMARY = Internal.createIndex("PRIMARY", Book.BOOK, new OrderField[] { Book.BOOK.ID }, true);
+        public static Index BOOK_STORE_PRIMARY = Internal.createIndex("PRIMARY", BookStore.BOOK_STORE, new OrderField[] { BookStore.BOOK_STORE.NAME }, true);
+        public static Index BOOK_TO_BOOK_STORE_PRIMARY = Internal.createIndex("PRIMARY", BookToBookStore.BOOK_TO_BOOK_STORE, new OrderField[] { BookToBookStore.BOOK_TO_BOOK_STORE.BOOK_STORE_NAME, BookToBookStore.BOOK_TO_BOOK_STORE.BOOK_ID }, true);
         public static Index ORDER_PRIMARY = Internal.createIndex("PRIMARY", Order.ORDER, new OrderField[] { Order.ORDER.ORDER_ID }, true);
         public static Index USER_INDEX_MOBILE = Internal.createIndex("index_mobile", User.USER, new OrderField[] { User.USER.MOBILE }, true);
         public static Index USER_PRIMARY = Internal.createIndex("PRIMARY", User.USER, new OrderField[] { User.USER.UID }, true);

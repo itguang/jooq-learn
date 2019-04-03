@@ -3,5 +3,8 @@ spring:
     url: jdbc:mysql://localhost:3306/study
     username: root
     password: root
+    driver-class-name: com.alibaba.druid.proxy.DruidDriver
+  jooq:
+    sql-dialect: mysql
 server:
   port: 8080

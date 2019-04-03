@@ -16,7 +16,7 @@ import org.springframework.core.env.Environment;
  * @author guang
  * @since 2019-04-03 15:40
  */
-@Configuration
+//@Configuration
 public class JooqConfig {
 
 

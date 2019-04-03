@@ -4,6 +4,10 @@
 package com.guang.jooqlearn.gen;
 
 
+import com.guang.jooqlearn.gen.tables.Author;
+import com.guang.jooqlearn.gen.tables.Book;
+import com.guang.jooqlearn.gen.tables.BookStore;
+import com.guang.jooqlearn.gen.tables.BookToBookStore;
 import com.guang.jooqlearn.gen.tables.Order;
 import com.guang.jooqlearn.gen.tables.User;
 
@@ -22,6 +26,26 @@ import javax.annotation.Generated;
 )
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {
+
+    /**
+     * The table <code>study.author</code>.
+     */
+    public static final Author AUTHOR = com.guang.jooqlearn.gen.tables.Author.AUTHOR;
+
+    /**
+     * The table <code>study.book</code>.
+     */
+    public static final Book BOOK = com.guang.jooqlearn.gen.tables.Book.BOOK;
+
+    /**
+     * The table <code>study.book_store</code>.
+     */
+    public static final BookStore BOOK_STORE = com.guang.jooqlearn.gen.tables.BookStore.BOOK_STORE;
+
+    /**
+     * The table <code>study.book_to_book_store</code>.
+     */
+    public static final BookToBookStore BOOK_TO_BOOK_STORE = com.guang.jooqlearn.gen.tables.BookToBookStore.BOOK_TO_BOOK_STORE;
 
     /**
      * The table <code>study.order</code>.

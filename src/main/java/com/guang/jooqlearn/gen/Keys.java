@@ -4,8 +4,16 @@
 package com.guang.jooqlearn.gen;
 
 
+import com.guang.jooqlearn.gen.tables.Author;
+import com.guang.jooqlearn.gen.tables.Book;
+import com.guang.jooqlearn.gen.tables.BookStore;
+import com.guang.jooqlearn.gen.tables.BookToBookStore;
 import com.guang.jooqlearn.gen.tables.Order;
 import com.guang.jooqlearn.gen.tables.User;
+import com.guang.jooqlearn.gen.tables.records.AuthorRecord;
+import com.guang.jooqlearn.gen.tables.records.BookRecord;
+import com.guang.jooqlearn.gen.tables.records.BookStoreRecord;
+import com.guang.jooqlearn.gen.tables.records.BookToBookStoreRecord;
 import com.guang.jooqlearn.gen.tables.records.OrderRecord;
 import com.guang.jooqlearn.gen.tables.records.UserRecord;
 
@@ -40,6 +48,10 @@ public class Keys {
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
+    public static final UniqueKey<AuthorRecord> KEY_AUTHOR_PRIMARY = UniqueKeys0.KEY_AUTHOR_PRIMARY;
+    public static final UniqueKey<BookRecord> KEY_BOOK_PRIMARY = UniqueKeys0.KEY_BOOK_PRIMARY;
+    public static final UniqueKey<BookStoreRecord> KEY_BOOK_STORE_PRIMARY = UniqueKeys0.KEY_BOOK_STORE_PRIMARY;
+    public static final UniqueKey<BookToBookStoreRecord> KEY_BOOK_TO_BOOK_STORE_PRIMARY = UniqueKeys0.KEY_BOOK_TO_BOOK_STORE_PRIMARY;
     public static final UniqueKey<OrderRecord> KEY_ORDER_PRIMARY = UniqueKeys0.KEY_ORDER_PRIMARY;
     public static final UniqueKey<UserRecord> KEY_USER_PRIMARY = UniqueKeys0.KEY_USER_PRIMARY;
     public static final UniqueKey<UserRecord> KEY_USER_INDEX_MOBILE = UniqueKeys0.KEY_USER_INDEX_MOBILE;
@@ -58,6 +70,10 @@ public class Keys {
     }
 
     private static class UniqueKeys0 {
+        public static final UniqueKey<AuthorRecord> KEY_AUTHOR_PRIMARY = Internal.createUniqueKey(Author.AUTHOR, "KEY_author_PRIMARY", Author.AUTHOR.ID);
+        public static final UniqueKey<BookRecord> KEY_BOOK_PRIMARY = Internal.createUniqueKey(Book.BOOK, "KEY_book_PRIMARY", Book.BOOK.ID);
+        public static final UniqueKey<BookStoreRecord> KEY_BOOK_STORE_PRIMARY = Internal.createUniqueKey(BookStore.BOOK_STORE, "KEY_book_store_PRIMARY", BookStore.BOOK_STORE.NAME);
+        public static final UniqueKey<BookToBookStoreRecord> KEY_BOOK_TO_BOOK_STORE_PRIMARY = Internal.createUniqueKey(BookToBookStore.BOOK_TO_BOOK_STORE, "KEY_book_to_book_store_PRIMARY", BookToBookStore.BOOK_TO_BOOK_STORE.BOOK_STORE_NAME, BookToBookStore.BOOK_TO_BOOK_STORE.BOOK_ID);
         public static final UniqueKey<OrderRecord> KEY_ORDER_PRIMARY = Internal.createUniqueKey(Order.ORDER, "KEY_order_PRIMARY", Order.ORDER.ORDER_ID);
         public static final UniqueKey<UserRecord> KEY_USER_PRIMARY = Internal.createUniqueKey(User.USER, "KEY_user_PRIMARY", User.USER.UID);
         public static final UniqueKey<UserRecord> KEY_USER_INDEX_MOBILE = Internal.createUniqueKey(User.USER, "KEY_user_index_mobile", User.USER.MOBILE);

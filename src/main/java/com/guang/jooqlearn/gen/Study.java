@@ -4,6 +4,10 @@
 package com.guang.jooqlearn.gen;
 
 
+import com.guang.jooqlearn.gen.tables.Author;
+import com.guang.jooqlearn.gen.tables.Book;
+import com.guang.jooqlearn.gen.tables.BookStore;
+import com.guang.jooqlearn.gen.tables.BookToBookStore;
 import com.guang.jooqlearn.gen.tables.Order;
 import com.guang.jooqlearn.gen.tables.User;
 
@@ -31,12 +35,32 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Study extends SchemaImpl {
 
-    private static final long serialVersionUID = 1246666986;
+    private static final long serialVersionUID = -1731573376;
 
     /**
      * The reference instance of <code>study</code>
      */
     public static final Study STUDY = new Study();
+
+    /**
+     * The table <code>study.author</code>.
+     */
+    public final Author AUTHOR = com.guang.jooqlearn.gen.tables.Author.AUTHOR;
+
+    /**
+     * The table <code>study.book</code>.
+     */
+    public final Book BOOK = com.guang.jooqlearn.gen.tables.Book.BOOK;
+
+    /**
+     * The table <code>study.book_store</code>.
+     */
+    public final BookStore BOOK_STORE = com.guang.jooqlearn.gen.tables.BookStore.BOOK_STORE;
+
+    /**
+     * The table <code>study.book_to_book_store</code>.
+     */
+    public final BookToBookStore BOOK_TO_BOOK_STORE = com.guang.jooqlearn.gen.tables.BookToBookStore.BOOK_TO_BOOK_STORE;
 
     /**
      * The table <code>study.order</code>.
@@ -73,6 +97,10 @@ public class Study extends SchemaImpl {
 
     private final List<Table<?>> getTables0() {
         return Arrays.<Table<?>>asList(
+            Author.AUTHOR,
+            Book.BOOK,
+            BookStore.BOOK_STORE,
+            BookToBookStore.BOOK_TO_BOOK_STORE,
             Order.ORDER,
             User.USER);
     }

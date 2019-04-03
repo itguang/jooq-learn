@@ -55,20 +55,6 @@
             <scope>test</scope>
         </dependency>
 
-
-        <!--数据管理和操作的核心代码。-->
-        <dependency>
-            <groupId>org.jooq</groupId>
-            <artifactId>jooq-meta</artifactId>
-            <version>3.11.9</version>
-        </dependency>
-
-        <!-- 负责数据库代码生成，主要负责JOOQ的代码生成功能。-->
-        <dependency>
-            <groupId>org.jooq</groupId>
-            <artifactId>jooq-codegen</artifactId>
-            <version>3.11.9</version>
-        </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
@@ -80,7 +66,6 @@
             <artifactId>jooq-codegen-maven</artifactId>
             <version>3.11.9</version>
         </dependency>
-
 
     </dependencies>
 
