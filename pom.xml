@@ -122,6 +122,7 @@
                             <pojosToString>true</pojosToString>
                             <validationAnnotations>true</validationAnnotations>
                             <springAnnotations>true</springAnnotations>
+                            <daos>true</daos>
                         </generate>
                         <!-- 代码生成路径 -->
                         <target>
