@@ -7,6 +7,7 @@ import com.guang.jooqlearn.gen.tables.records.UserRecord;
 import org.jooq.DSLContext;
 import org.jooq.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,7 +34,7 @@ public class IndexController {
 
     @RequestMapping("/hello")
     public String hello(){
-        return "hello";
+        return "hello world";
     }
 
 
@@ -65,5 +66,17 @@ public class IndexController {
         return userList;
 
     }
+
+    @RequestMapping("/insert")
+    public Object insert(@RequestBody User user){
+
+        userDao.insert(user);
+
+        return "ok";
+    }
+
+
+
+
 
 }

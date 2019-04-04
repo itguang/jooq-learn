@@ -18,7 +18,6 @@
     <description>Demo project for Spring Boot</description>
 
 
-
     <properties>
         <java.version>1.8</java.version>
         <!--防止maven改动IDE的language level -->
@@ -105,7 +104,7 @@
                     <!-- 代码生成配置参数 -->
                     <generator>
                         <database>
-                            <name> org.jooq.meta.mysql.MySQLDatabase</name>
+                            <name>org.jooq.meta.mysql.MySQLDatabase</name>
                             <includes>.*</includes>
                             <inputSchema>${db.schema}</inputSchema>
                             <forcedTypes>
@@ -131,6 +130,22 @@
                         </target>
                     </generator>
                 </configuration>
+            </plugin>
+
+            <!--JRebel 插件-->
+            <plugin>
+                <groupId>org.zeroturnaround</groupId>
+                <artifactId>jrebel-maven-plugin</artifactId>
+                <version>RELEASE</version>
+                <executions>
+                    <execution>
+                        <id>generate-rebel-xml</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
         </plugins>
