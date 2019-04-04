@@ -29,6 +29,7 @@
             <validationAnnotations>true</validationAnnotations>
             <springAnnotations>true</springAnnotations>
             <daos>true</daos>
+
         </generate>
         <target>
             <!-- 生成的代码所在的包结构 -->
